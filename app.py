@@ -24,17 +24,23 @@ def home():
     index = 0
     while index < len(forecast_list):
 
-        print(forecast_list[index]['dt_txt'])
-        print(forecast_list[index]['main']['weather'])
-        print(forecast_list[index]['weather'][0]['temp'])
-        print(forecast_list[index]['weather'][0]['main'])
-        index += 8
+        while index < len(forecast_list):
+            print(forecast_list[index]['dt_txt'])  # Print timestamp of forecast
+            print(forecast_list[index]['weather'][0]['description'])  # Description of weather
+            print(forecast_list[index]['main']['temp'])  # Temperature
+            print(forecast_list[index]['weather'][0]['main'])
+            index += 1
 
-    #   print('server_time' + forecast['dt_txt'])
-    #   print('local' + str(datetime.fromtimestamp(forecast['dt'])))
-    #   print(forecast['main']['temp_min'])
-    #   print(forecast['main']['temp_max'])
-    #
+            while index < len(forecast_list):
+                forecast = forecast_list[index]
+                print('server_time:', forecast['dt_txt'])  # Print timestamp of forecast
+                print('local_time:', datetime.fromtimestamp(forecast['dt']))  # Convert Unix timestamp to local time
+                print('Temperature (min):', forecast['main']['temp_min'])  # Minimum temperature
+                print('Temperature (max):', forecast['main']['temp_max'])  # Maximum temperature
+                print('Weather Description:', forecast['weather'][0]['description'])  # Description of weather
+                print('Main Weather Condition:', forecast['weather'][0]['main'])  # Main weather condition
+                index += 1
+
 
     forecast_list = ""
     return render_template('home.html', forecast_list=forecast_list)
