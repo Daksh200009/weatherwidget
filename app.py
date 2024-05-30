@@ -40,6 +40,7 @@ def home():
                 print('Weather Description:', forecast['weather'][0]['description'])  # Description of weather
                 print('Main Weather Condition:', forecast['weather'][0]['main'])  # Main weather condition
                 index += 1
+                
 
 
     forecast_list = ""
