@@ -43,26 +43,17 @@
 <div class="card" style="width: 50%;">
   <div class="card-body">
  <div class="row">
-        <div class="col">
-          Monday
-        </div>
-        <div class="col">
-          Tuesday
-        </div>
-        <div class="col">
-          Wednesday
-        </div>
-             <div class="col">
-          Thursday
-        </div>
-        <div class="col">
-          Friday
-        </div>
-        <div class="col">
-          Saturday
-        </div>
-     <div class="col">
-         Sunday
+         {% for forecast in forecast_data %}
+         <div class="col"
+            {{ forecast["day_of_week"] }}
+             <br>
+            <img src="{{forcast['icon'] }}"
+            <br>
+            {{ forecast["temp"] }}
+            <br>
+            {{ forecast["description"] }}
+            </div>
+         {% endfor %}
       </div>
   </div>
 </div>
