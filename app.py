@@ -15,8 +15,8 @@ def home():
     data = response.json()
     city_name = data['city']['name']
     city_population = data['city']['population']
-    print('city_name')
-    print('city_population')
+    print(city_name)
+    print(city_population)
 
     #'description': data['weather'][0]['description'],
 
@@ -26,37 +26,41 @@ def home():
     while index < len(forecast_list):
         forecast = forecast_list[index]
         # Print timestamp of forecast
-        print('server_time:', forecast['dt_txt'])
+
         dt_txt = forecast_list[index]["dt_txt"]
         # Convert Unix timestamp to local time
         day_name = datetime.fromtimestamp(forecast['dt'])
         # Maximum temperature
-        temp = forecast_list['main']['temp_max']
+        temp = forecast['main']['temp']
         # Description of weather
         description = forecast['weather'][0]['description']
         icon = response.json()
+        # Rain
+        if 'rain' in forecast_list[index]:
+            rain = forecast_list[index]['rain']
+        else:
+            rain = "No Rain"
+        print(rain)
+        date_object = datetime.strptime(dt_txt, '%Y-%m-%d %H:%M:%S')
+        print(date_object)
+        day_name = date_object.strftime('%A')
+        print(day_name)
+
         index += 8
 
-
-
-        date_object = datetime.strptime(dt_txt, '%Y-%m-%d %H %M %S')
-        day_of_week = date_object.weekdays()
-        print(day_of_week)
-        day_name = date_object.strptime('%A')
-        print(day_name)
-        days.append(day_name)
 
         thisdict = {
             'dt_txt': dt_txt,
             'day_of_week': day_name,
             'temp': temp,
-            'icon': 'http://openweathermap.org/img/w/' + icon + '.png',
-            'description': description
+            'icon': 'http://openweathermap.org/img/w/' + '.png',
+            'description': description,
+            'rain': rain,
+            'date_object': date_object,
+            'day_name': day_name,
         }
 
         forecast_data.append(thisdict)
-
-
 
     return render_template('home.html', forecast_list=forecast_list)
 
