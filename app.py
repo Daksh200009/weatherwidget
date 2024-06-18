@@ -22,35 +22,42 @@ def home():
 
     forecast_list = data['list']
     index = 0
+    forecast_data = []
     while index < len(forecast_list):
+        forecast = forecast_list[index]
+        # Print timestamp of forecast
+        print('server_time:', forecast['dt_txt'])
+        dt_txt = forecast_list[index]["dt_txt"]
+        # Convert Unix timestamp to local time
+        day_name = datetime.fromtimestamp(forecast['dt'])
+        # Maximum temperature
+        temp = forecast_list['main']['temp_max']
+        # Description of weather
+        description = forecast['weather'][0]['description']
+        icon = response.json()
+        index += 8
 
-        while index < len(forecast_list):
-            print(forecast_list[index]['dt_txt'])  # Print timestamp of forecast
-            "day_of_week" : day_name
-            print(forecast_list[index]['weather'][0]['description'])  # Description of weather
-            print(forecast_list[index]['main']['temp'])  # Temperature
-            print(forecast_list[index]['weather'][0]['main'])
-            index += 1
 
-            while index < len(forecast_list):
-                forecast = forecast_list[index]
-                print('server_time:', forecast['dt_txt'])  # Print timestamp of forecast
-                dt_txt = forecast_list[index]["dt_txt"]
-                print('local_time:', datetime.fromtimestamp(forecast['dt']))  # Convert Unix timestamp to local time
-                print('Temperature (min):', forecast['main']['temp_min'])  # Minimum temperature
-                print('Temperature (max):', forecast['main']['temp_max'])  # Maximum temperature
-                print('Weather Description:', forecast['weather'][0]['description'])  # Description of weather
-                print('Main Weather Condition:', forecast['weather'][0]['main'])  # Main weather condition
-                index += 1
 
-    date_object = datetime.strptime(dt_txt, '%Y-%m-%d %H %M %S')
-    day_of_week = date_object.weekdays()
-    print(day_of_week)
-    day_name = date_object.strptime('%A')
-    print(day_name)
-    days.append(day_name)
+        date_object = datetime.strptime(dt_txt, '%Y-%m-%d %H %M %S')
+        day_of_week = date_object.weekdays()
+        print(day_of_week)
+        day_name = date_object.strptime('%A')
+        print(day_name)
+        days.append(day_name)
 
-    forecast_list = ""
+        thisdict = {
+            'dt_txt': dt_txt,
+            'day_of_week': day_name,
+            'temp': temp,
+            'icon': 'http://openweathermap.org/img/w/' + icon + '.png',
+            'description': description
+        }
+
+        forecast_data.append(thisdict)
+
+
+
     return render_template('home.html', forecast_list=forecast_list)
 
 if __name__ == '__main__':
