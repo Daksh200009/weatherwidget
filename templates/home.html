@@ -46,16 +46,17 @@
       {% for data in forecast_data %}
       <div class="col">
         <p>{{ data.day_name }}</p>
-        <img src="{{ data.icon_url }}" alt="Weather Icon" style="width: 100px;" style="height: 200px;">
-        <p> Temperature: {{ data.temp }} °C</p>
-        <p> Rain: {{ data.rain }}</p>
-        <p> Description: {{ data.description }}</p>
-        <p> Date: {{ data.dt_text }}</p>
+        <img src="{{ data.icon }}" alt="Weather Icon" style="width: 100px;">
+        <p>Temperature: {{ data.temp }} °C</p>
+        <p>Rain: {{ data.rain }}</p>
+        <p>Description: {{ data.description }}</p>
+        <p>Date: {{ data.dt_txt }}</p>
       </div>
       {% endfor %}
     </div>
   </div>
 </div>
+
 
 
 {{ forecast_data }}

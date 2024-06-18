@@ -1,5 +1,8 @@
+# Used to make HTTP requests
 import requests
+# Used to handle date and time operations.
 from datetime import datetime
+# From Flask framework for creating web applications, rendering templates, and handling HTTP requests.
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -62,7 +65,7 @@ def home():
 
         forecast_data.append(thisdict)
 
-    return render_template('home.html', forecast_list=forecast_list)
+    return render_template('home.html', forecast_data=forecast_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
