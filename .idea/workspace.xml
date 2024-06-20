@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32087caf-4b20-4623-a15f-0b7349b625d3" name="Changes" comment="html card 3 has been finished">
+    <list default="true" id="32087caf-4b20-4623-a15f-0b7349b625d3" name="Changes" comment="Added more comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -198,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718717795841</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added more comments">
+      <option name="closed" value="true" />
+      <created>1718852873338</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718852873338</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +224,7 @@
     <MESSAGE value="Template of the code including card" />
     <MESSAGE value="rain has been included in both dict and html" />
     <MESSAGE value="html card 3 has been finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="html card 3 has been finished" />
+    <MESSAGE value="Added more comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more comments" />
   </component>
 </project>

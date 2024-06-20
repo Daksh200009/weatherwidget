@@ -41,10 +41,15 @@ def home():
         # Convert Unix timestamp to local time
         day_name = datetime.fromtimestamp(forecast['dt'])
         # Main temperature
-        temp = forecast['main']['temp']
+        # Ensure temperature is fetched correctly and is in Kelvin
+        temp_kelvin = forecast['main']['temp']
+        # Convert Kelvin to Celsius and round to 2 decimal places
+        temp_celsius = round(temp_kelvin - 273.15, 0)
         # Description of weather
         description = forecast['weather'][0]['description']
         icon = response.json()
+        icon_code = forecast['weather'][0]['icon']
+        icon_url = f"http://openweathermap.org/img/w/{icon_code}.png"
         # Checking if it will rain during the forecast period
         if 'rain' in forecast_list[index]:
             rain = forecast_list[index]['rain']
@@ -62,12 +67,13 @@ def home():
         thisdict = {
             'dt_txt': dt_txt,
             'day_of_week': day_name,
-            'temp': temp,
-            'icon': 'http://openweathermap.org/img/w/' + '.png',
+            'temp': temp_celsius,
+            'icon': icon_url,
             'description': description,
             'rain': rain,
             'date_object': date_object,
             'day_name': day_name,
+
         }
 
         forecast_data.append(thisdict)
