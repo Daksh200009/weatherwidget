@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32087caf-4b20-4623-a15f-0b7349b625d3" name="Changes" comment="Added more comments">
+    <list default="true" id="32087caf-4b20-4623-a15f-0b7349b625d3" name="Changes" comment="Added icons and fixed a issue with HTML which was causing it to print all the data in a sentence">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718852873338</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added icons and fixed a issue with HTML which was causing it to print all the data in a sentence">
+      <option name="closed" value="true" />
+      <created>1718888413928</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718888413928</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +233,7 @@
     <MESSAGE value="rain has been included in both dict and html" />
     <MESSAGE value="html card 3 has been finished" />
     <MESSAGE value="Added more comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more comments" />
+    <MESSAGE value="Added icons and fixed a issue with HTML which was causing it to print all the data in a sentence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added icons and fixed a issue with HTML which was causing it to print all the data in a sentence" />
   </component>
 </project>
